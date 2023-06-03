@@ -11,7 +11,7 @@ var certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
 let credentials = {key: privateKey, cert: certificate};
 
 const server = http.createServer(app)
-const port = process.env.PORT
+const port = process.env.APPID
 
 const secureServer = https.createServer(credentials,app);
 
