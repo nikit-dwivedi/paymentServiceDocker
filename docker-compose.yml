@@ -1,0 +1,25 @@
+version : '3'
+
+services:
+    lb:
+        image: haproxy
+        ports:
+            - "8081:8080"
+        volumes:
+            - ./haproxy:/usr/local/etc/haproxy
+    paymentservice1:
+        image: paymentservice
+        environment:
+            - APPID=1111
+    paymentservice2:
+        image: paymentservice
+        environment:
+            - APPID=2222
+    paymentservice3:
+        image: paymentservice
+        environment:
+            - APPID=3333
+    paymentservice4:
+        image: paymentservice
+        environment:
+            - APPID=4444
