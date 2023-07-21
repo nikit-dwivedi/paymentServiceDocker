@@ -52,13 +52,18 @@ async function serverValidation(res, error) {
 }
 
 function sendResponse(res, subCode, status, message, error, items) {
-    res.status(200).json({
+    let response = {
         status: status,
-        subCode: subCode,
+        subCode: subCode ,
         message: message,
         error: error,
         items: items
-    })
+    }
+    if (res.tokenInfo) {
+        response.tokenInfo = res.tokenInfo
+    }
+    res.status(200);
+    res.json(response);
 }
 
 module.exports = {
