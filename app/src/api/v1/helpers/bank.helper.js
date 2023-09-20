@@ -14,15 +14,21 @@ exports.createBankAccount = async function (data) {
 exports.getBankAccountsByUserId = async function (userId) {
     try {
         const bankAccounts = await bankModel.find({ userId, isActive: true }).select("-_id bankId accountNumber accountHolder ifsc branchName beneficiaryName bankName");
+        if (!bankAccounts[0]) {
+            throw new Error('Please add Bank First');
+        }
         return bankAccounts;
     } catch (error) {
         throw new Error('Error getting bank accounts: ' + error.message);
     }
 }
 
-exports.getBankAccountByBankId = async function (bankId) {
+exports.getBankAccountByBankId = async function (bankId, userId) {
     try {
-        const bankAccount = await bankModel.findOne({ bankId, isActive: true }).select("-_id bankId accountNumber accountHolder ifsc branchName beneficiaryName bankName");
+        const bankAccount = await bankModel.findOne({ bankId, userId, isActive: true }).select("-_id bankId accountNumber accountHolder ifsc branchName beneficiaryName bankName");
+        if (!bankAccount) {
+            throw new Error('Bank accounts not found');
+        }
         return bankAccount;
     } catch (error) {
         throw new Error('Error getting bank account: ' + error.message);

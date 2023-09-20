@@ -4,7 +4,7 @@ const transactionModel = require("../models/transaction.model")
 const { createOrderService, hash, getPaymentStatus, razorPayService, getRPPaymentStatus } = require('../helpers/payment.helper')
 const { validateOrder } = require('../validations/order.validations')
 const { validationResult } = require('express-validator')
-const { createTransaction, getTransaction } = require('../helpers/transaction.helper')
+const { createTransaction, getTransaction, getTransactionFromOutlet } = require('../helpers/transaction.helper')
 const { parseJwt } = require('../middleware/authentication')
 
 exports.createPayment = async function (req, res) {
@@ -103,7 +103,6 @@ exports.getTransactionList = async (req, res) => {
             return badRequest(res, "please onboard first")
         }
         const { from, to } = req.query
-        
         const { status, message, data } = await getTransaction(from, to)
         return status ? success(res, message, data) : badRequest(res, message)
     } catch (error) {
@@ -111,6 +110,24 @@ exports.getTransactionList = async (req, res) => {
         return badRequest(res, "unknown error", '')
     }
 }
+exports.getTransactionListOfOutlet = async (req, res) => {
+    try {
+        const token = parseJwt(req.headers.authorization)
+        let sellerId = null
+        if (token.role === 2) {
+            sellerId = token.customId
+        }
+        const { from, to } = req.query
+
+        const { status, message, data } = await getTransactionFromOutlet(from, to, req.body.outletList)
+        return status ? success(res, message, data) : badRequest(res, message)
+    } catch (error) {
+        console.log(error);
+        return badRequest(res, "unknown error", '')
+    }
+}
+
+
 
 
 

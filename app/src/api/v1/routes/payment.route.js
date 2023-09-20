@@ -2,14 +2,16 @@ const express = require('express')
 const { validationResult, body } = require('express-validator')
 const router = express.Router()
 
-const { createPayment, addTransactions, checkPayment, createRPPayment, getTransactionList } = require('../controllers/payment.controller')
+const { createPayment, addTransactions, checkPayment, createRPPayment, getTransactionList, getTransactionListOfOutlet } = require('../controllers/payment.controller')
 const { orderCheck } = require('../validations/payment.validator')
 
-const { authenticateUser, authenticateAdmin } = require('../middleware/authentication')
+const { authenticateUser, authenticateAdmin, authenticateSeller } = require('../middleware/authentication')
 
 router.post('/createPayment', authenticateUser,createRPPayment)
 router.get('/transaction', authenticateAdmin,getTransactionList)
 router.get('/check/:orderId', authenticateUser,checkPayment);
+router.post('/transaction/outlet', authenticateSeller,getTransactionListOfOutlet);
+
 
 // router.post('/test', checking(), (req, res) => {
 //     const result = validationResult(req)

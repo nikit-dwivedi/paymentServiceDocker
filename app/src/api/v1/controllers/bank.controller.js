@@ -24,7 +24,8 @@ exports.getUserBank = async (req, res) => {
 }
 exports.getIndividualBank = async (req, res) => {
     try {
-        const bankData = await getBankAccountByBankId(req.params.bankId)
+        const {userId} = parseJwt(req.headers.authorization)
+        const bankData = await getBankAccountByBankId(req.params.bankId,userId)
         return success(res, "bank Details", bankData)
     } catch (error) {
         return badRequest(res, error.message)
@@ -32,7 +33,6 @@ exports.getIndividualBank = async (req, res) => {
 }
 exports.getAllBank = async (req, res) => {
     try {
-        console.log("++++++++++");
         const bankList = await getAllBankList()
         return success(res, "bank List", bankList)
     } catch (error) {

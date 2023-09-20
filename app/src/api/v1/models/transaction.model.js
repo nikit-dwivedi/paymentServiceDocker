@@ -40,6 +40,13 @@ const paymentSchema = new Schema({
         },
         paymentAmount: {
             type: Number
+        },
+        totalAmount: {
+            type: Number,
+        },
+        discountAmount:{
+            type:Number,
+            default:0
         }
     },
     partner: {
@@ -65,6 +72,11 @@ const paymentSchema = new Schema({
     },
     paymentStatus: {
         type: String
+    },
+    status: {
+        type: String,
+        default: "pending",
+        Enum: ["pending", "settled"]
     }
 }, { timestamps: true })
 

@@ -1,0 +1,115 @@
+{
+    "status": true,
+    "subCode": 200,
+    "message": "Successful",
+    "error": "",
+    "items": {
+        "itemCount": 2,
+        "menu": [
+            {
+                "categotyId": "g4VAIReV0N",
+                "categoryName": "Soups",
+                "hasSubCategory": true,
+                "itemCount": 2,
+                "subCategory": [
+                    {
+                        "subCategoryId": "D6bn9i3I95",
+                        "parentCategoryId": "g4VAIReV0N",
+                        "categoryName": "Veg",
+                        "hasSubCategory": true,
+                        "itemCount": 7,
+                        "product": [
+                            {
+                                "productId": "OerxMSJ12q",
+                                "parentSubCategoryId": "D6bn9i3I95",
+                                "parentCategoryId": "g4VAIReV0N",
+                                "productName": "Tomato Soup",
+                                "productDescription": "Hot and tasty tomato soup.",
+                                "productPrice": 180,
+                                "productImage": "",
+                                "hasCustomization": true,
+                                "customization": [
+                                    {
+                                        "customizationId": "YzNJlrG0r4",
+                                        "parentProductId": "OerxMSJ12q",
+                                        "parentSubCategoryId": "D6bn9i3I95",
+                                        "parentCategoryId": "g4VAIReV0N",
+                                        "customizationName": "Quantity",
+                                        "hasCustomItems": true,
+                                        "itemCount": 2,
+                                        "customItem": [
+                                            {
+                                                "customItemId": "fgpOljTrHh",
+                                                "parentCustomizationId": "YzNJlrG0r4",
+                                                "parentProductId": "OerxMSJ12q",
+                                                "parentSubCategoryId": "D6bn9i3I95",
+                                                "parentCategoryId": "g4VAIReV0N",
+                                                "customName": "Half Bowl",
+                                                "customPrice": 180,
+                                                "default": true
+                                            },
+                                            {
+                                                "customItemId": "k7CuRWJelY",
+                                                "parentCustomizationId": "YzNJlrG0r4",
+                                                "parentProductId": "OerxMSJ12q",
+                                                "parentSubCategoryId": "D6bn9i3I95",
+                                                "parentCategoryId": "g4VAIReV0N",
+                                                "customName": "Full Bowl",
+                                                "customPrice": 240,
+                                                "default": false
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "productId": "NsgcMP9i6W",
+                                "parentSubCategoryId": "D6bn9i3I95",
+                                "parentCategoryId": "g4VAIReV0N",
+                                "productName": "Sweet Corn Soup",
+                                "productDescription": "Hot and tasty sweet corn soup.",
+                                "productPrice": 0,
+                                "defaultPrice": 180,
+                                "productImage": "",
+                                "hasCustomization": true,
+                                "customization": [
+                                    {
+                                        "customizationId": "KnAoiEZpFk",
+                                        "parentProductId": "NsgcMP9i6W",
+                                        "parentSubCategoryId": "D6bn9i3I95",
+                                        "parentCategoryId": "g4VAIReV0N",
+                                        "customizationName": "Quantity",
+                                        "hasCustomItems": true,
+                                        "itemCount": 2,
+                                        "customItem": [
+                                            {
+                                                "customItemId": "INMV1jpZw5",
+                                                "parentCustomizationId": "KnAoiEZpFk",
+                                                "parentProductId": "NsgcMP9i6W",
+                                                "parentSubCategoryId": "D6bn9i3I95",
+                                                "parentCategoryId": "g4VAIReV0N",
+                                                "customName": "Half Bowl",
+                                                "customPrice": 180,
+                                                "default": true
+                                            },
+                                            {
+                                                "customItemId": "MBhZQqzlOg",
+                                                "parentCustomizationId": "KnAoiEZpFk",
+                                                "parentProductId": "NsgcMP9i6W",
+                                                "parentSubCategoryId": "D6bn9i3I95",
+                                                "parentCategoryId": "g4VAIReV0N",
+                                                "customName": "Full Bowl",
+                                                "customPrice": 240,
+                                                "default": false
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
