@@ -11,8 +11,8 @@ router.post('/createPayment', authenticateUser,createRPPayment)
 router.get('/transaction', authenticateAdmin,getTransactionList)
 router.get('/check/:orderId', authenticateUser,checkPayment);
 router.post('/transaction/outlet', authenticateSeller,getTransactionListOfOutlet);
-router.post("/aitPay/success",paymentSuccess)
-router.post("/aitPay/fail",paymentFail)
+router.post("/airPay/success",paymentSuccess)
+router.post("/airPay/fail",paymentFail)
 
 
 // router.post('/test', checking(), (req, res) => {
