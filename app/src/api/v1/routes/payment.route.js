@@ -2,7 +2,7 @@ const express = require('express')
 const { validationResult, body } = require('express-validator')
 const router = express.Router()
 
-const { createPayment, addTransactions, checkPayment, createRPPayment, getTransactionList, getTransactionListOfOutlet } = require('../controllers/payment.controller')
+const { createPayment, addTransactions, checkPayment, createRPPayment, getTransactionList, getTransactionListOfOutlet, paymentSuccess, paymentFail } = require('../controllers/payment.controller')
 const { orderCheck } = require('../validations/payment.validator')
 
 const { authenticateUser, authenticateAdmin, authenticateSeller } = require('../middleware/authentication')
