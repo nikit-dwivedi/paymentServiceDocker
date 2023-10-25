@@ -99,7 +99,7 @@ exports.checkPayment = async (req, res) => {
 exports.getTransactionList = async (req, res) => {
     try {
         const token = parseJwt(req.headers.authorization)
-        if (!token.role===777) {
+        if (!token.role === 777) {
             return badRequest(res, "please onboard first")
         }
         const { from, to } = req.query
@@ -127,6 +127,25 @@ exports.getTransactionListOfOutlet = async (req, res) => {
     }
 }
 
+
+exports.paymentSuccess = async (req, res) => {
+    try {
+        message = "success"
+        return success(res, message)
+    } catch (error) {
+        console.log(error);
+        return unknownError(res, error.message)
+    }
+}
+exports.paymentFail = async (req, res) => {
+    try {
+        message = "fail"
+        return success(res, message)
+    } catch (error) {
+        console.log(error);
+        return unknownError(res, error.message)
+    }
+}
 
 
 

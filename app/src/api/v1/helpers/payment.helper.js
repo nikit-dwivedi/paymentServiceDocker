@@ -4,7 +4,7 @@ const transactionModel = require("../models/transaction.model")
 const { success, created, notFound, badRequest, serverError } = require('./response.helpers')
 const bcrypt = require('bcrypt')
 const crypto = require('crypto')
-const { createOrder, getOrder } = require('./razorpay.helpers')
+const { createOrder, getOrder } = require('../services/razorpay.service')
 const salt = 10;
 
 exports.createOrderService = (res, createData) => {
